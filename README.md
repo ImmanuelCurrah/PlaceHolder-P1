@@ -78,30 +78,26 @@ This wireframe is a showcase of what a player would see in the browser. This vie
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component                                                                    | Priority | Estimated Time | Time Invested | Actual Time |
 | ---------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
 | INFRASTRUCTURE:                                                              |          |                |               |             |
 | Set up HTML                                                                  |    H     |     0.5hrs     |               |             |
-| Js code to connect API                                                       |    H     |      1hrs      |               |             |
+| Js code to connect API                                                       |    H     |      2hrs      |               |             |
 | DATA:                                                                        |
-| Write logic to select random cards and display on screen                     |    H     |      3hrs      |               |             |
-| Connect random card generation to button                                     |    H     |      2hrs      |               |             |
-| Create a score counter and logic to see which card wins                      |    H     |      3hrs      |               |             |
-| End game logic, display winner                                               |    M     |      1hrs      |               |             |
-| Create a restart game button                                                 |    M     |      3hrs      |               |             |
-| User Input like user name and avatar selection and display                   |    M     |      4hrs      |               |             |
+| Write logic to select random cards and display on screen                     |    H     |      4hrs      |               |             |
+| Connect random card generation to button                                     |    H     |      3hrs      |               |             |
+| Create a score counter and logic to see which card wins                      |    H     |      4hrs      |               |             |
+| End game logic, display winner                                               |    M     |      2hrs      |               |             |
+| Create a restart game button                                                 |    M     |      4hrs      |               |             |
+| User Input like user name and avatar selection and display                   |    M     |      5hrs      |               |             |
 | STYLING:                                                                     |
-| background-image set, header and links                                       |    H     |      2hrs      |               |             |
-| style buttons to look nice and cool                                          |    M     |      2hrs      |               |             |
-| create dropdown in mobile app with links, just regular links for other sizes |    M     |      1hrs      |               |             |
-| create some animation for cards when randomized                              |    L     |      3hrs      |               |             |
-| Some animation for end game before a restart button                          |    M     |      3hrs      |               |             |
-| Basic styling and making sure everything looks good at each size and works   |    H     |      5hrs      |               |             |
-| Total                                                                        |          |    33.5hrs     |               |             |
+| background-image set, header and links                                       |    H     |      3hrs      |               |             |
+| style buttons to look nice and cool                                          |    M     |      3hrs      |               |             |
+| create dropdown in mobile app with links, just regular links for other sizes |    M     |      2hrs      |               |             |
+| create some animation for cards when randomized                              |    L     |      5hrs      |               |             |
+| Some animation for end game before a restart button                          |    M     |      4hrs      |               |             |
+| Basic styling and making sure everything looks good at each size and works   |    H     |      6hrs      |               |             |
+| Total                                                                        |          |    47.5hrs     |               |             |
 
 ## Code Snippet
 
