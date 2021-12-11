@@ -64,7 +64,7 @@ This wireframe is a showcase of what a player would see in the browser. This vie
 
 | Day       | Deliverable                                                | Status     |
 | --------- | ---------------------------------------------------------- | ---------- |
-| Dec 10-12 | Prompt / Wireframes / Priority Matrix / Timeframes         | Incomplete |
+| Dec 10-12 | Prompt / Wireframes / Priority Matrix / Timeframes         | Complete   |
 | Dec 13    | Project Approval, Begin starter code (HTML, CSS, BASIC JS) | Incomplete |
 | Dec 13    | Main App logic. Js code.                                   | Incomplete |
 | Dec 14    | Main App logic and js code. Finish up the MVPS             | Incomplete |
@@ -101,7 +101,7 @@ Time frames are also key in the development cycle. You have limited time to code
 | create some animation for cards when randomized                              |    L     |      3hrs      |               |             |
 | Some animation for end game before a restart button                          |    M     |      3hrs      |               |             |
 | Basic styling and making sure everything looks good at each size and works   |    H     |      5hrs      |               |             |
-| Total                                                                        |          |     33hrs      |               |             |
+| Total                                                                        |          |    33.5hrs     |               |             |
 
 ## Code Snippet
 
