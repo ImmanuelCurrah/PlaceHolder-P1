@@ -6,7 +6,7 @@ Yug.io
 
 ## Project Description
 
-My project is going to be a simple game using a Yu-gi-oh Card database. The basic functionality will be two randomly drawn cards from a monster pool. Whichever card has a higher attack versus the opposing cards defense will win. Awarding the player a point.
+My project is going to be a simple game using a Yu-gi-oh Card database. The player will also be able to choose an avatar from another api. Two cards will be drawn at random. The card that's attack points are greater then the other's defensive will win. After a certain amount of wins or loses the game will be over and restart.
 
 ## API and Data Sample
 
@@ -48,7 +48,7 @@ This wireframe is a showcase of what a player would see in the browser. This vie
 - Randomly generate two photos of monster cards through external API.
 - Allow player to set a User Name until end game logic is initiated.
 - Have a draw card button that will trigger the display of the two random monster cards.
-- Keep score of how many wins and losses a player has.
+- Keep score of how many wins and loses a player has.
 - Initiate some end game logic when a number of wins or loses is reached.
 - Let the user choose their avatar from a small database of pics.
 
