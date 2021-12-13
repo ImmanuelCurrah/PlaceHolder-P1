@@ -1,6 +1,7 @@
 const avatarSelector = document.querySelector("#avatar-selector");
 const imageSpot = document.querySelector(".avatar-image-space");
 const label = document.querySelector(".select-avatar-text");
+const username = document.querySelector(".username");
 
 let avatars = [
   {
@@ -55,6 +56,13 @@ const removeImages = () => {
   imageSpot.innerHTML = "";
 };
 
+const userNameHandler = () => {
+  let userName = prompt("Please enter your name", "Yugi");
+  if (userName != null) {
+    username.innerText = userName;
+  }
+};
+
 avatarSelector.addEventListener("change", (event) => {
   let selected = avatars.filter((singleAvatar) => {
     if (singleAvatar.name == event.target.value) {
@@ -62,4 +70,5 @@ avatarSelector.addEventListener("change", (event) => {
     }
   });
   displayAvatarHandler(selected);
+  userNameHandler();
 });

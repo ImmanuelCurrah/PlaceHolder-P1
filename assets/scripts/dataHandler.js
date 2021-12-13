@@ -78,7 +78,7 @@ const firstMonsterSpecs = (name, attack, defence, image) => {
   firstImage.src = image;
   firstImage.alt = `this is a picture of ${name}`;
 
-  // firstCardSpecs.appendChild(firstImage);
+  firstCardSpecs.appendChild(firstImage);
 };
 
 const secondMonsterSpecs = (name, attack, defence, image) => {
@@ -98,7 +98,7 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
   secondImage.src = image;
   secondImage.alt = `this is a picture of ${name}`;
 
-  // secondCardSpecs.appendChild(secondImage);
+  secondCardSpecs.appendChild(secondImage);
 };
 
 const monsterDataBaseHandler = (dataBase) => {
@@ -107,13 +107,13 @@ const monsterDataBaseHandler = (dataBase) => {
   let name = firstRandomMonster.name;
   let attack = firstRandomMonster.atk;
   let defence = firstRandomMonster.def;
-  let image = firstRandomMonster.card_images[0].image_url_small;
+  let image = firstRandomMonster.card_images[0].image_url;
 
   const secondRandomMonster = dataBase[Math.floor(Math.random() * 10)];
   let nameTwo = secondRandomMonster.name;
   let attackTwo = secondRandomMonster.atk;
   let defenceTwo = secondRandomMonster.def;
-  let imageTwo = secondRandomMonster.card_images[0].image_url_small;
+  let imageTwo = secondRandomMonster.card_images[0].image_url;
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
