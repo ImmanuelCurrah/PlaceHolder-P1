@@ -3,15 +3,63 @@ const firstCardSpecs = document.querySelector(".first-card");
 const secondCardSpecs = document.querySelector(".second-card");
 const firstImage = document.createElement("img");
 const secondImage = document.createElement("img");
+const winsDisplay = document.querySelector(".wins");
+const losesDisplay = document.querySelector(".loses");
+const resetBtn = document.querySelector(".reset");
+const winnerAnnouncement = document.querySelector(".winner");
+const loserAnnouncement = document.querySelector(".loser");
+
+let score = 0;
+let loses = 0;
 
 async function dataHandler() {
   const url =
-    "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster&race=Dragon";
+    "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster";
   let dataContent = await axios.get(url);
   let monsterDataBase = dataContent.data.data;
-  console.log(monsterDataBase);
+  // console.log(monsterDataBase);
   monsterDataBaseHandler(monsterDataBase);
 }
+
+const endGame = () => {
+  if (score > 9) {
+    winnerAnnouncement.classList.remove("hidden");
+  } else if (loses > 9) {
+    loserAnnouncement.classList.remove("hidden");
+  }
+  if (score > 9 || loses > 9) {
+    score = 0;
+    loses = 0;
+    randomizerBtn.classList.add("hidden");
+    resetBtn.classList.remove("hidden");
+
+    resetBtn.addEventListener("click", () => {
+      winsDisplay.innerText = `Wins: 0`;
+      losesDisplay.innerText = `Loses: 0`;
+      randomizerBtn.classList.remove("hidden");
+      resetBtn.classList.add("hidden");
+      winnerAnnouncement.classList.add("hidden");
+      loserAnnouncement.classList.add("hidden");
+      firstCardSpecs.innerHTML = " ";
+      secondCardSpecs.innerHTML = " ";
+    });
+  }
+};
+
+const scoreHandler = (attackOne, defenceOne, attackTwo, defenceTwo) => {
+  if (attackOne > defenceTwo) {
+    score++;
+  } else if (attackTwo > defenceOne) {
+    loses++;
+  } else {
+    score;
+    loses;
+  }
+
+  winsDisplay.innerText = `Wins: ${score}`;
+  losesDisplay.innerText = `Loses: ${loses}`;
+  endGame();
+};
 
 const firstMonsterSpecs = (name, attack, defence, image) => {
   firstCardSpecs.innerHTML = " ";
@@ -30,7 +78,7 @@ const firstMonsterSpecs = (name, attack, defence, image) => {
   firstImage.src = image;
   firstImage.alt = `this is a picture of ${name}`;
 
-  firstCardSpecs.appendChild(firstImage);
+  // firstCardSpecs.appendChild(firstImage);
 };
 
 const secondMonsterSpecs = (name, attack, defence, image) => {
@@ -50,7 +98,7 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
   secondImage.src = image;
   secondImage.alt = `this is a picture of ${name}`;
 
-  secondCardSpecs.appendChild(secondImage);
+  // secondCardSpecs.appendChild(secondImage);
 };
 
 const monsterDataBaseHandler = (dataBase) => {
@@ -69,6 +117,7 @@ const monsterDataBaseHandler = (dataBase) => {
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
+  scoreHandler(attack, defence, attackTwo, defenceTwo);
 };
 
 const app = (dataBase) => {

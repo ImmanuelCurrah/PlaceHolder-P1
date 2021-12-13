@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="assets/styles/style.css"
+      type="text/css"
+      media="screen"
+      title="no title"
+      charset="utf-8"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/scripts/userAvatarHandler.js"></script>
     <script src="assets/scripts/dataHandler.js" defer></script>
     <title>Document</title>
   </head>
@@ -31,17 +40,18 @@
         <p>user avatar</p>
       </div>
       <input type="text" placeholder="username" />
+      <p class="winner hidden">winner</p>
+      <p class="loser hidden">loser</p>
+      <p class="wins">Wins: 0</p>
+      <p class="loses">Loses: 0</p>
     </form>
     <div class="card-container">
-      <div class="first-card">
-        <p>image and name of first card</p>
-      </div>
-      <div class="second-card">
-        <p>image and name of second card</p>
-      </div>
+      <div class="first-card"></div>
+      <div class="second-card"></div>
     </div>
     <footer>
       <button class="random-btn">Randomize Card</button>
+      <button class="reset hidden">Reset</button>
     </footer>
   </body>
 </html>
