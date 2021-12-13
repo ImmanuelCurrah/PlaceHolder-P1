@@ -13,10 +13,32 @@ async function dataHandler() {
 
 const firstMonsterSpecs = (name, attack, defence) => {
   console.log(`second monster: ${name}, atk: ${attack}, def: ${defence}`);
+  let nameOfMonster = document.createElement("h2");
+  nameOfMonster.innerText = name;
+  firstCardSpecs.appendChild(nameOfMonster);
+
+  let atk = document.createElement("h5");
+  let def = document.createElement("h5");
+  atk.innerText = `attack: ${attack}`;
+  def.innerText = `defence: ${defence}`;
+
+  firstCardSpecs.appendChild(atk);
+  firstCardSpecs.appendChild(def);
 };
 
 const secondMonsterSpecs = (name, attack, defence) => {
   console.log(`first monster: ${name}, atk: ${attack}, def: ${defence}`);
+  let nameOfMonster = document.createElement("h2");
+  nameOfMonster.innerText = name;
+  secondCardSpecs.appendChild(nameOfMonster);
+
+  let atk = document.createElement("h5");
+  let def = document.createElement("h5");
+  atk.innerText = `attack: ${attack}`;
+  def.innerText = `defence: ${defence}`;
+
+  secondCardSpecs.appendChild(atk);
+  secondCardSpecs.appendChild(def);
 };
 
 const monsterDataBaseHandler = (dataBase) => {
@@ -35,4 +57,8 @@ const monsterDataBaseHandler = (dataBase) => {
   firstMonsterSpecs(name, attack, defence);
 };
 
-randomizerBtn.addEventListener("click", dataHandler);
+const app = (dataBase) => {
+  dataHandler(dataBase);
+};
+
+randomizerBtn.addEventListener("click", app);
