@@ -13,6 +13,7 @@ const loserAnnouncement = document.querySelector(".loser");
 const progressBar = document.getElementById("progress-bar");
 const xpCounter = document.querySelector(".xp-counter");
 let scoreKeeper = document.querySelector(".score-keeper");
+let levelBar = document.querySelector(".level-handler");
 
 let score = 0;
 let loses = 0;
@@ -43,10 +44,7 @@ const endGame = () => {
     resetBtn.classList.remove("hidden");
     totalScore += 500;
     scoreKeeper.innerText = `Score: ${totalScore}`;
-    progressBar.value += 100;
-    // if (level > 2) {
-    //   console.log("this is here!");
-    // }
+    progressBar.value += 20;
     reachedMaxLevel();
 
     if (progressBar.value == 100) {
@@ -231,6 +229,7 @@ avatarSelector.addEventListener("change", (event) => {
   winsDisplay.classList.remove("hidden");
   losesDisplay.classList.remove("hidden");
   scoreKeeper.classList.remove("hidden");
+  levelBar.classList.remove("hidden");
   displayAvatarHandler(selected);
   userNameHandler();
 });
@@ -263,7 +262,7 @@ function closeMenu() {
 const endGameBtn = document.querySelector(".end-game-btn");
 
 const reachedMaxLevel = () => {
-  if (level > 1) {
+  if (level == 9) {
     endGameBtn.classList.remove("hidden");
     resetBtn.classList.add("hidden");
     firstCardSpecs.classList.add("hidden");
