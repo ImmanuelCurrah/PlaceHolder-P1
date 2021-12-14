@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="assets/styles/style.css"
+      type="text/css"
+      media="screen"
+      title="no title"
+      charset="utf-8"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="assets/scripts/navbarHandler.js" defer></script>
+    <script src="assets/scripts/userAvatarHandler.js" defer></script> -->
+    <script src="assets/scripts/app.js" defer></script>
+    <title>Fight!</title>
+  </head>
+  <body>
+    <!-- https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci -->
+    <header class="header">
+      <nav class="navbar">
+        <p class="nav-logo">Yug.io</p>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="fight.html" class="nav-link">Fight!</a>
+          </li>
+          <li class="nav-item">
+            <a href="profile.html" class="nav-link">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="setting.html" class="nav-link">Settings</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <form class="user-info-form">
+      <div class="user-avatar">
+        <label for="user-avatars" class="select-avatar-text">
+          <select id="avatar-selector">
+            <option hidden default selected="false">Pick an Avatar</option>
+          </select>
+        </label>
+      </div>
+      <div class="avatar-container">
+        <div class="avatar-pic-name">
+          <div class="avatar-image-space"></div>
+          <p class="username"></p>
+        </div>
+      </div>
+      <div class="level-handler hidden">
+        <label for="file" class="xp-counter">Level: 1</label>
+        <div class="progress-bar-div">
+          <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+      </div>
+    </form>
+
+    <!-- <progress id="canvas" value="32" max="100"></progress> -->
+    <div class="winner-loser">
+      <p class="winner hidden">You Won!</p>
+      <p class="loser hidden">You Lost, better luck next time...</p>
+    </div>
+    <div class="score-counter">
+      <p class="wins hidden">Wins: 0</p>
+      <p class="loses hidden">Loses: 0</p>
+    </div>
+    <div class="card-container">
+      <div class="first-card"></div>
+      <div class="second-card"></div>
+    </div>
+    <div class="card-name-display"></div>
+    <footer>
+      <div class="score-keeper hidden">Score: 0</div>
+      <div>
+        <button class="random-btn hidden">Draw!</button>
+        <button class="reset hidden">Reset</button>
+        <button class="end-game-btn hidden">You beat the Game!</button>
+      </div>
+    </footer>
+  </body>
+</html>
