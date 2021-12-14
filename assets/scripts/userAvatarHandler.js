@@ -45,6 +45,7 @@ const displayAvatarHandler = (avatarsImage) => {
   removeImages();
 
   let img = document.createElement("img");
+  img.classList.add("small-pic");
   img.src = avatarsImage[0].url;
   img.alt = `This is an image of a Shmoe, this one is ${avatarsImage[0].name}`;
   imageSpot.appendChild(img);

@@ -107,13 +107,13 @@ const monsterDataBaseHandler = (dataBase) => {
   let name = firstRandomMonster.name;
   let attack = firstRandomMonster.atk;
   let defence = firstRandomMonster.def;
-  let image = firstRandomMonster.card_images[0].image_url;
+  let image = firstRandomMonster.card_images[0].image_url_small;
 
   const secondRandomMonster = dataBase[Math.floor(Math.random() * 10)];
   let nameTwo = secondRandomMonster.name;
   let attackTwo = secondRandomMonster.atk;
   let defenceTwo = secondRandomMonster.def;
-  let imageTwo = secondRandomMonster.card_images[0].image_url;
+  let imageTwo = secondRandomMonster.card_images[0].image_url_small;
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
