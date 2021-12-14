@@ -12,10 +12,12 @@ const winnerAnnouncement = document.querySelector(".winner");
 const loserAnnouncement = document.querySelector(".loser");
 const progressBar = document.getElementById("progress-bar");
 const xpCounter = document.querySelector(".xp-counter");
+let scoreKeeper = document.querySelector(".score-keeper");
 
 let score = 0;
 let loses = 0;
 let level = 1;
+let totalScore = 0;
 
 xpCounter.innerText = `Level: ${level}`;
 
@@ -39,6 +41,8 @@ const endGame = () => {
     loses = 0;
     randomizerBtn.classList.add("hidden");
     resetBtn.classList.remove("hidden");
+    totalScore += 500;
+    scoreKeeper.innerText = `Score: ${totalScore}`;
     progressBar.value += 20;
     if (progressBar.value == 100) {
       level++;
@@ -218,6 +222,7 @@ avatarSelector.addEventListener("change", (event) => {
   randomizerBtn.classList.remove("hidden");
   winsDisplay.classList.remove("hidden");
   losesDisplay.classList.remove("hidden");
+  scoreKeeper.classList.remove("hidden");
   displayAvatarHandler(selected);
   userNameHandler();
 });
