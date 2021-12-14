@@ -30,7 +30,7 @@ a {
 
 header {
   background-color: rgb(68, 176, 184);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .header {
@@ -84,6 +84,21 @@ header {
   color: #482ff7;
 }
 
+.avatar-pic-name {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.avatar-image-space {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#avatar-selector {
+  margin-left: 5px;
+}
+
 footer {
   display: flex;
   margin-top: auto;
@@ -91,20 +106,32 @@ footer {
   justify-content: space-evenly;
 }
 
-/* .yugioh {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
-} */
-
 .small-pic {
-  height: 50px;
-  width: 50px;
+  height: 65px;
+  width: 65px;
 }
 
 .hidden {
   display: none;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.score-counter {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.winner-loser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 400px) {
