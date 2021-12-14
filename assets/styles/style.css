@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-family: Cinzel;
   box-sizing: border-box;
   margin: 0;
@@ -142,6 +142,12 @@ footer {
   justify-content: space-evenly;
   margin: 30px;
   font-size: 20px;
+}
+
+.progress-bar-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
 }
 
 .winner-loser {

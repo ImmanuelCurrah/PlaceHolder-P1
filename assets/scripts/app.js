@@ -11,9 +11,13 @@ const resetBtn = document.querySelector(".reset");
 const winnerAnnouncement = document.querySelector(".winner");
 const loserAnnouncement = document.querySelector(".loser");
 const progressBar = document.getElementById("progress-bar");
+const xpCounter = document.querySelector(".xp-counter");
 
 let score = 0;
 let loses = 0;
+let level = 1;
+
+xpCounter.innerText = `Level: ${level}`;
 
 async function dataHandler() {
   const url =
@@ -36,6 +40,11 @@ const endGame = () => {
     randomizerBtn.classList.add("hidden");
     resetBtn.classList.remove("hidden");
     progressBar.value += 20;
+    if (progressBar.value == 100) {
+      level++;
+      xpCounter.innerText = `Level: ${level}`;
+      progressBar.value = 0;
+    }
 
     resetBtn.addEventListener("click", () => {
       winsDisplay.innerText = `Wins: 0`;
