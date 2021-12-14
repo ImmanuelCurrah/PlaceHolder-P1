@@ -151,6 +151,8 @@ const avatarSelector = document.querySelector("#avatar-selector");
 const imageSpot = document.querySelector(".avatar-image-space");
 const label = document.querySelector(".select-avatar-text");
 const username = document.querySelector(".username");
+const avatarChild = document.querySelector(".user-avatar");
+const form = document.querySelector(".user-info-form");
 
 let avatars = [
   {
@@ -198,7 +200,7 @@ const displayAvatarHandler = (avatarsImage) => {
   img.src = avatarsImage[0].url;
   img.alt = `This is an image of a Shmoe, this one is ${avatarsImage[0].name}`;
   imageSpot.appendChild(img);
-  avatarSelector.classList.add("hidden");
+  form.removeChild(avatarChild);
   label.classList.add("hidden");
 };
 

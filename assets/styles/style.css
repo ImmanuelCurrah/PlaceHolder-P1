@@ -107,6 +107,10 @@ header {
   font-size: 15px;
 }
 
+.avatar-container {
+  display: flex;
+}
+
 .avatar-image-space {
   margin-right: 5px;
   margin-left: 5px;
