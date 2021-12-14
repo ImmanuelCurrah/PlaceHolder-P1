@@ -139,6 +139,9 @@ footer {
   justify-content: space-around;
   align-items: center;
   font-size: 15px;
+  background-color: rgb(68, 176, 184);
+  margin-bottom: 0;
+  height: 40px;
 }
 
 .small-pic {
@@ -182,6 +185,30 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 30px;
+}
+
+/* home menu */
+.home {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/dd6el10-55312aec-eebe-4099-b829-18c85f063ff2.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGQ2ZWwxMC01NTMxMmFlYy1lZWJlLTQwOTktYjgyOS0xOGM4NWYwNjNmZjIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.vTE0nbbDK_leZhF6KSqt1WFGiY6x6HqZ488PuyaxKOs");
+}
+
+.home-footer {
+  background-color: rgb(68, 176, 184);
+  margin-bottom: 0;
+  height: 40px;
+  font-size: 10px;
+}
+
+.github {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.linkin {
+  height: 45px;
+  width: 45px;
+  margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 520px) {
