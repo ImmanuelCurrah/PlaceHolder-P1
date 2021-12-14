@@ -79,7 +79,7 @@ const scoreHandler = (
   nameTwo
 ) => {
   winnerName.innerHTML = "";
-  if (attackOne > defenceTwo || defenceOne > attackTwo) {
+  if (attackOne > defenceTwo) {
     score++;
     winnerName.innerText = `You drew ${nameOne} and won! Draw again!`;
     cardContainer.appendChild(winnerName);
@@ -141,14 +141,14 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
 };
 
 const monsterDataBaseHandler = (dataBase) => {
-  const firstRandomMonster = dataBase[Math.floor(Math.random() * 10)];
+  const firstRandomMonster = dataBase[Math.floor(Math.random() * 200)];
   // console.log(randomMonster);
   let name = firstRandomMonster.name;
   let attack = firstRandomMonster.atk;
   let defence = firstRandomMonster.def;
   let image = firstRandomMonster.card_images[0].image_url_small;
 
-  const secondRandomMonster = dataBase[Math.floor(Math.random() * 10)];
+  const secondRandomMonster = dataBase[Math.floor(Math.random() * 200)];
   let nameTwo = secondRandomMonster.name;
   let attackTwo = secondRandomMonster.atk;
   let defenceTwo = secondRandomMonster.def;
