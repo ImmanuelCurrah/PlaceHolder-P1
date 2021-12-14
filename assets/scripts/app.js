@@ -1,3 +1,5 @@
+// Handling Card Data and displaying it -------------------------------------------------------------
+
 const randomizerBtn = document.querySelector(".random-btn");
 const firstCardSpecs = document.querySelector(".first-card");
 const secondCardSpecs = document.querySelector(".second-card");
@@ -8,6 +10,7 @@ const losesDisplay = document.querySelector(".loses");
 const resetBtn = document.querySelector(".reset");
 const winnerAnnouncement = document.querySelector(".winner");
 const loserAnnouncement = document.querySelector(".loser");
+const progressBar = document.getElementById("progress-bar");
 
 let score = 0;
 let loses = 0;
@@ -32,6 +35,7 @@ const endGame = () => {
     loses = 0;
     randomizerBtn.classList.add("hidden");
     resetBtn.classList.remove("hidden");
+    progressBar.value += 20;
 
     resetBtn.addEventListener("click", () => {
       winsDisplay.innerText = `Wins: 0`;
@@ -125,3 +129,110 @@ const app = (dataBase) => {
 };
 
 randomizerBtn.addEventListener("click", app);
+
+//---------------------------------------------------------------------------------------------------------
+
+// Handling Avatar info and displaying it------------------------------------------------------------------
+
+const avatarSelector = document.querySelector("#avatar-selector");
+const imageSpot = document.querySelector(".avatar-image-space");
+const label = document.querySelector(".select-avatar-text");
+const username = document.querySelector(".username");
+
+let avatars = [
+  {
+    url: "https://joeschmoe.io/api/v1/jabala",
+    name: "Jabala",
+  },
+  {
+    url: "https://joeschmoe.io/api/v1/jacques",
+    name: "Jacques",
+  },
+  {
+    url: "https://joeschmoe.io/api/v1/jezabelle",
+    name: "Jezabelle",
+  },
+  {
+    url: "https://joeschmoe.io/api/v1/jia",
+    name: "Jia",
+  },
+  {
+    url: "https://joeschmoe.io/api/v1/julie",
+    name: "Julie",
+  },
+  {
+    url: "https://joeschmoe.io/api/v1/jenni",
+    name: "Jenni",
+  },
+];
+
+const setAvatarValuesHandler = (avatars) => {
+  avatars.forEach((avatar) => {
+    let option = document.createElement("option");
+    option.classList.add("avatar-option");
+    option.value = avatar.name;
+    option.textContent = avatar.name;
+    avatarSelector.appendChild(option);
+  });
+};
+setAvatarValuesHandler(avatars);
+
+const displayAvatarHandler = (avatarsImage) => {
+  removeImages();
+
+  let img = document.createElement("img");
+  img.classList.add("small-pic");
+  img.src = avatarsImage[0].url;
+  img.alt = `This is an image of a Shmoe, this one is ${avatarsImage[0].name}`;
+  imageSpot.appendChild(img);
+  avatarSelector.classList.add("hidden");
+  label.classList.add("hidden");
+};
+
+const removeImages = () => {
+  imageSpot.innerHTML = "";
+};
+
+const userNameHandler = () => {
+  let userName = prompt("Please enter your name", "Yugi");
+  if (userName != null) {
+    username.innerText = userName;
+  }
+};
+
+avatarSelector.addEventListener("change", (event) => {
+  let selected = avatars.filter((singleAvatar) => {
+    if (singleAvatar.name == event.target.value) {
+      return singleAvatar;
+    }
+  });
+  randomizerBtn.classList.remove("hidden");
+  winsDisplay.classList.remove("hidden");
+  losesDisplay.classList.remove("hidden");
+  displayAvatarHandler(selected);
+  userNameHandler();
+});
+
+//--------------------------------------------------------------------------------------------------------
+// Handles the Nav bar animation and toggle ---------------------------------------------------------------
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
+
+// -------------------------------------------------------------------------------------------------------

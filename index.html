@@ -12,10 +12,14 @@
       title="no title"
       charset="utf-8"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="assets/scripts/navbarHandler.js" defer></script>
-    <script src="assets/scripts/userAvatarHandler.js" defer></script>
-    <script src="assets/scripts/dataHandler.js" defer></script>
+    <!-- <script src="assets/scripts/navbarHandler.js" defer></script>
+    <script src="assets/scripts/userAvatarHandler.js" defer></script> -->
+    <script src="assets/scripts/app.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -56,13 +60,20 @@
         <div class="avatar-image-space"></div>
         <p class="username"></p>
       </div>
+      <label for="file" class="xp-counter"
+        >Level 1
+        <div>
+          <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+      </label>
+      <!-- <progress id="canvas" value="32" max="100"></progress> -->
       <div class="winner-loser">
         <p class="winner hidden">winner</p>
         <p class="loser hidden">loser</p>
       </div>
       <div class="score-counter">
-        <p class="wins">Wins: 0</p>
-        <p class="loses">Loses: 0</p>
+        <p class="wins hidden">Wins: 0</p>
+        <p class="loses hidden">Loses: 0</p>
       </div>
     </form>
     <div class="card-container">
@@ -71,7 +82,7 @@
     </div>
     <footer>
       <div>
-        <button class="random-btn">Randomize Card</button>
+        <button class="random-btn hidden">Randomize Card</button>
         <button class="reset hidden">Reset</button>
       </div>
     </footer>
