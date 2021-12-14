@@ -12,8 +12,10 @@ const winnerAnnouncement = document.querySelector(".winner");
 const loserAnnouncement = document.querySelector(".loser");
 const progressBar = document.getElementById("progress-bar");
 const xpCounter = document.querySelector(".xp-counter");
-let scoreKeeper = document.querySelector(".score-keeper");
-let levelBar = document.querySelector(".level-handler");
+const scoreKeeper = document.querySelector(".score-keeper");
+const levelBar = document.querySelector(".level-handler");
+const cardContainer = document.querySelector(".card-name-display");
+const winnerName = document.createElement("h2");
 
 let score = 0;
 let loses = 0;
@@ -63,18 +65,34 @@ const endGame = () => {
       loserAnnouncement.classList.add("hidden");
       firstCardSpecs.innerHTML = " ";
       secondCardSpecs.innerHTML = " ";
+      winnerName.innerHTML = "";
     });
   }
 };
 
-const scoreHandler = (attackOne, defenceOne, attackTwo, defenceTwo) => {
+const scoreHandler = (
+  attackOne,
+  defenceOne,
+  attackTwo,
+  defenceTwo,
+  nameOne,
+  nameTwo
+) => {
+  winnerName.innerHTML = "";
   if (attackOne > defenceTwo) {
     score++;
+    winnerName.innerText = `You drew ${nameOne} and won! Draw again!`;
+    cardContainer.appendChild(winnerName);
   } else if (attackTwo > defenceOne) {
     loses++;
-  } else {
+    winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
+  } else if (
+    (attackOne == defenceTwo && attackTwo == defenceOne) ||
+    (attackOne > defenceTwo && attackTwo > defenceOne)
+  ) {
     score;
     loses;
+    winnerName.innerText = `You drew ${nameOne} and tied against ${nameTwo}`;
   }
 
   winsDisplay.innerText = `Wins: ${score}`;
@@ -138,7 +156,7 @@ const monsterDataBaseHandler = (dataBase) => {
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
-  scoreHandler(attack, defence, attackTwo, defenceTwo);
+  scoreHandler(attack, defence, attackTwo, defenceTwo, name, nameTwo);
 };
 
 const app = (dataBase) => {

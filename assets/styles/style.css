@@ -153,6 +153,15 @@ footer {
 .card-container {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.card-name-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 .score-counter {
