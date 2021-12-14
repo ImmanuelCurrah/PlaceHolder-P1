@@ -13,32 +13,39 @@
       charset="utf-8"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/scripts/navbarHandler.js" defer></script>
     <script src="assets/scripts/userAvatarHandler.js" defer></script>
     <script src="assets/scripts/dataHandler.js" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div>
-        <p>Yug.io</p>
-      </div>
-      <div>
-        <p>Home</p>
-      </div>
-      <div>
-        <p>Fight!</p>
-      </div>
-      <div>
-        <p>Profile</p>
-      </div>
-      <div>
-        <p>Settings</p>
-      </div>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo">Yug.io</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Fight!</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Settings</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
     </header>
     <form class="user-info-form">
       <div class="user-avatar">
-        <label for="user-avatars" class="select-avatar-text"
-          >Select an Avatar:
+        <label for="user-avatars" class="select-avatar-text">
           <select id="avatar-selector">
             <option hidden default selected="false">Pick an Avatar</option>
           </select>
