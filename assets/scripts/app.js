@@ -79,11 +79,11 @@ const scoreHandler = (
   nameTwo
 ) => {
   winnerName.innerHTML = "";
-  if (attackOne > defenceTwo) {
+  if (attackOne > defenceTwo || defenceOne > attackTwo) {
     score++;
     winnerName.innerText = `You drew ${nameOne} and won! Draw again!`;
     cardContainer.appendChild(winnerName);
-  } else if (attackTwo > defenceOne) {
+  } else if (attackTwo > defenceOne || defenceTwo > attackOne) {
     loses++;
     winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
   } else if (
@@ -92,7 +92,7 @@ const scoreHandler = (
   ) {
     score;
     loses;
-    winnerName.innerText = `You drew ${nameOne} and tied against ${nameTwo}`;
+    winnerName.innerText = `You drew ${nameOne} and tied against ${nameTwo} try again.`;
   }
 
   winsDisplay.innerText = `Wins: ${score}`;
@@ -104,7 +104,7 @@ const firstMonsterSpecs = (name, attack, defence, image) => {
   firstCardSpecs.innerHTML = " ";
   let nameOfMonster = document.createElement("h2");
   nameOfMonster.innerText = name;
-  firstCardSpecs.appendChild(nameOfMonster);
+  // firstCardSpecs.appendChild(nameOfMonster);
 
   let atk = document.createElement("h5");
   let def = document.createElement("h5");
@@ -124,7 +124,7 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
   secondCardSpecs.innerHTML = " ";
   let nameOfMonster = document.createElement("h2");
   nameOfMonster.innerText = name;
-  secondCardSpecs.appendChild(nameOfMonster);
+  // secondCardSpecs.appendChild(nameOfMonster);
 
   let atk = document.createElement("h5");
   let def = document.createElement("h5");
