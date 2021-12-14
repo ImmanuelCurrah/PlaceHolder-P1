@@ -43,7 +43,11 @@ const endGame = () => {
     resetBtn.classList.remove("hidden");
     totalScore += 500;
     scoreKeeper.innerText = `Score: ${totalScore}`;
-    progressBar.value += 20;
+    progressBar.value += 100;
+    // if (level > 2) {
+    //   console.log("this is here!");
+    // }
+    reachedMaxLevel();
 
     if (progressBar.value == 100) {
       level++;
@@ -254,3 +258,19 @@ function closeMenu() {
 }
 
 // -------------------------------------------------------------------------------------------------------
+// End game logic handler --------------------------------------------------------------------------------
+// called function inside of endGame
+const endGameBtn = document.querySelector(".end-game-btn");
+
+const reachedMaxLevel = () => {
+  if (level > 1) {
+    endGameBtn.classList.remove("hidden");
+    resetBtn.classList.add("hidden");
+    firstCardSpecs.classList.add("hidden");
+    secondCardSpecs.classList.add("hidden");
+    winnerAnnouncement.innerText = "Game over. Go again!";
+    endGameBtn.addEventListener("click", () => {
+      window.location.reload();
+    });
+  }
+};
