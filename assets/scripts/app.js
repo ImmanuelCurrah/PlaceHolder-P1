@@ -44,10 +44,12 @@ const endGame = () => {
     totalScore += 500;
     scoreKeeper.innerText = `Score: ${totalScore}`;
     progressBar.value += 20;
+
     if (progressBar.value == 100) {
       level++;
       xpCounter.innerText = `Level: ${level}`;
       progressBar.value = 0;
+      progressBar.max += 40;
     }
 
     resetBtn.addEventListener("click", () => {
