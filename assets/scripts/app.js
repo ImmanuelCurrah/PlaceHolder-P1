@@ -1,3 +1,8 @@
+// Imports ---------
+
+import { hamburgerHandler, hello } from "./hamburger.js";
+hamburgerHandler();
+
 // Handling Card Data and displaying it -------------------------------------------------------------
 
 const randomizerBtn = document.querySelector(".random-btn");
@@ -24,13 +29,21 @@ let totalScore = 0;
 
 xpCounter.innerText = `Level: ${level}`;
 
+const deckHandler = (deckCards) => {
+  let deckData = [];
+  for (let i = 0; i < Math.floor(Math.random() * 100); i += 1) {
+    deckData.push(deckCards[i]);
+  }
+  console.log(deckData);
+};
+
 async function dataHandler() {
   const url =
     "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster";
   let dataContent = await axios.get(url);
   let monsterDataBase = dataContent.data.data;
-  // console.log(monsterDataBase);
   monsterDataBaseHandler(monsterDataBase);
+  deckHandler(monsterDataBase);
 }
 
 const endGame = () => {
@@ -253,28 +266,6 @@ avatarSelector.addEventListener("change", (event) => {
 });
 
 //--------------------------------------------------------------------------------------------------------
-// Handles the Nav bar animation and toggle ---------------------------------------------------------------
-
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
-
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
-
-// -------------------------------------------------------------------------------------------------------
 // End game logic handler --------------------------------------------------------------------------------
 // called function inside of endGame
 const endGameBtn = document.querySelector(".end-game-btn");

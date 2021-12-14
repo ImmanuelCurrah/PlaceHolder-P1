@@ -142,6 +142,7 @@ footer {
   background-color: rgb(68, 176, 184);
   margin-bottom: 0;
   height: 40px;
+  border-top: 1px solid green;
 }
 
 .small-pic {
@@ -190,6 +191,33 @@ footer {
 /* home menu */
 .home {
   background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/dd6el10-55312aec-eebe-4099-b829-18c85f063ff2.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGQ2ZWwxMC01NTMxMmFlYy1lZWJlLTQwOTktYjgyOS0xOGM4NWYwNjNmZjIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.vTE0nbbDK_leZhF6KSqt1WFGiY6x6HqZ488PuyaxKOs");
+}
+
+.welcome-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.welcome-to-yugioh {
+  font-weight: 900;
+  color: red;
+}
+
+.start-here {
+  font-size: 15px;
+  color: white;
+}
+
+.start-btn {
+  color: red;
+  height: 50px;
+  width: 300px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .home-footer {
