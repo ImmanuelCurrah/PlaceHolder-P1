@@ -136,7 +136,7 @@ footer {
   display: flex;
   margin-top: auto;
   margin-bottom: 20px;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   font-size: 15px;
   background-color: rgb(68, 176, 184);

@@ -36,11 +36,13 @@ async function dataHandler() {
   monsterDataBaseHandler(monsterDataBase);
 }
 
-const endGame = () => {
+const endGame = (nameOne, nameTwo) => {
   if (score > 9) {
     winnerAnnouncement.classList.remove("hidden");
+    winnerName.innerText = `You drew ${nameOne} and won!`;
   } else if (loses > 9) {
     loserAnnouncement.classList.remove("hidden");
+    winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
   }
   if (score > 9) {
     score = 0;
@@ -104,7 +106,7 @@ const scoreHandler = (
 
   winsDisplay.innerText = `Wins: ${score}`;
   losesDisplay.innerText = `Loses: ${loses}`;
-  endGame();
+  endGame(nameOne, nameTwo);
 };
 
 const firstMonsterSpecs = (name, attack, defence, image) => {
@@ -184,6 +186,8 @@ const avatarChild = document.querySelector(".user-avatar");
 const form = document.querySelector(".user-info-form");
 const userNameInput = document.getElementById("name");
 const userNameBtn = document.querySelector(".fight-btn");
+const icons = document.querySelector(".fight-icons");
+const footer = document.querySelector("footer");
 
 let avatars = [
   {
@@ -254,6 +258,8 @@ const userNameHandler = () => {
     levelBar.classList.remove("hidden");
     userNameInput.classList.add("hidden");
     userNameBtn.classList.add("hidden");
+    icons.classList.add("hidden");
+    footer.style.justifyContent = "space-around";
   });
 };
 
@@ -265,11 +271,6 @@ avatarSelector.addEventListener("change", (event) => {
   });
   userNameInput.classList.remove("hidden");
   userNameBtn.classList.remove("hidden");
-  // randomizerBtn.classList.remove("hidden");
-  // winsDisplay.classList.remove("hidden");
-  // losesDisplay.classList.remove("hidden");
-  // scoreKeeper.classList.remove("hidden");
-  // levelBar.classList.remove("hidden");
   displayAvatarHandler(selected);
   userNameHandler();
 });
