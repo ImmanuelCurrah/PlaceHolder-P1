@@ -36,7 +36,7 @@ async function dataHandler() {
   monsterDataBaseHandler(monsterDataBase);
 }
 
-const endGame = (nameOne, nameTwo) => {
+const endGame = (nameOne) => {
   if (score > 9) {
     winnerAnnouncement.classList.remove("hidden");
     winnerName.innerText = `You drew ${nameOne} and won!`;
@@ -82,14 +82,7 @@ const endGame = (nameOne, nameTwo) => {
   });
 };
 
-const scoreHandler = (
-  attackOne,
-  defenceOne,
-  attackTwo,
-  defenceTwo,
-  nameOne,
-  nameTwo
-) => {
+const scoreHandler = (attackOne, defenceTwo, nameOne, nameTwo) => {
   winnerName.innerHTML = "";
   if (attackOne > defenceTwo) {
     score++;
@@ -106,7 +99,7 @@ const scoreHandler = (
 
   winsDisplay.innerText = `Wins: ${score}`;
   losesDisplay.innerText = `Loses: ${loses}`;
-  endGame(nameOne, nameTwo);
+  endGame(nameOne);
 };
 
 const firstMonsterSpecs = (name, attack, defence, image) => {
@@ -124,6 +117,7 @@ const firstMonsterSpecs = (name, attack, defence, image) => {
   firstCardSpecs.appendChild(def);
 
   firstImage.src = image;
+  firstImage.classList.add("first-card");
   firstImage.alt = `this is a picture of ${name}`;
 
   firstCardSpecs.appendChild(firstImage);
@@ -144,6 +138,7 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
   secondCardSpecs.appendChild(def);
 
   secondImage.src = image;
+  secondImage.classList.add("second-card");
   secondImage.alt = `this is a picture of ${name}`;
 
   secondCardSpecs.appendChild(secondImage);
@@ -155,17 +150,17 @@ const monsterDataBaseHandler = (dataBase) => {
   let name = firstRandomMonster.name;
   let attack = firstRandomMonster.atk;
   let defence = firstRandomMonster.def;
-  let image = firstRandomMonster.card_images[0].image_url_small;
+  let image = firstRandomMonster.card_images[0].image_url;
 
   const secondRandomMonster = dataBase[Math.floor(Math.random() * 200)];
   let nameTwo = secondRandomMonster.name;
   let attackTwo = secondRandomMonster.atk;
   let defenceTwo = secondRandomMonster.def;
-  let imageTwo = secondRandomMonster.card_images[0].image_url_small;
+  let imageTwo = secondRandomMonster.card_images[0].image_url;
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
-  scoreHandler(attack, defence, attackTwo, defenceTwo, name, nameTwo);
+  scoreHandler(attack, defenceTwo, name, nameTwo);
 };
 
 const app = (dataBase) => {
