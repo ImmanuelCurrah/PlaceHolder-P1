@@ -211,7 +211,9 @@ footer {
 
 .start-here {
   font-size: 15px;
-  color: white;
+  color: red;
+  font-size: 23px;
+  font-weight: 900;
 }
 
 .start-btn {
@@ -256,6 +258,18 @@ footer {
 
 .linkin:hover {
   transform: scale(1.5);
+}
+
+/* profile body */
+
+.profile-body {
+  background-image: url("https://i.pinimg.com/originals/e7/57/88/e75788eab98b8ae42911fb4dbac5f739.jpg");
+}
+
+/* settings body  */
+
+.settings-body {
+  background-image: url("https://64.media.tumblr.com/03ff6519d1f85bf323ee28de81da2724/tumblr_pdk831UDj81vik702o1_1280.png");
 }
 
 @media only screen and (max-width: 520px) {
