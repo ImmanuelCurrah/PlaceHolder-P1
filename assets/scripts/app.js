@@ -58,7 +58,7 @@ const endGame = () => {
       progressBar.value = 0;
       progressBar.max += 40;
     }
-  } else if (loses > 1) {
+  } else if (loses > 9) {
     score = 0;
     loses = 0;
     totalScore;
@@ -93,13 +93,10 @@ const scoreHandler = (
     score++;
     winnerName.innerText = `You drew ${nameOne} and won! Draw again!`;
     cardContainer.appendChild(winnerName);
-  } else if (attackTwo > defenceOne || defenceTwo > attackOne) {
+  } else if (defenceTwo > attackOne) {
     loses++;
     winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
-  } else if (
-    (attackOne == defenceTwo && attackTwo == defenceOne) ||
-    (attackOne > defenceTwo && attackTwo > defenceOne)
-  ) {
+  } else if (attackOne == defenceTwo) {
     score;
     loses;
     winnerName.innerText = `You drew ${nameOne} and tied against ${nameTwo} try again.`;
