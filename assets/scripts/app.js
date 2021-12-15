@@ -1,6 +1,5 @@
 // Imports ---------
-
-import { hamburgerHandler, hello } from "./hamburger.js";
+import { hamburgerHandler } from "./hamburger.js";
 hamburgerHandler();
 
 // Handling Card Data and displaying it -------------------------------------------------------------
@@ -29,21 +28,12 @@ let totalScore = 0;
 
 xpCounter.innerText = `Level: ${level}`;
 
-const deckHandler = (deckCards) => {
-  let deckData = [];
-  for (let i = 0; i < Math.floor(Math.random() * 100); i += 1) {
-    deckData.push(deckCards[i]);
-  }
-  console.log(deckData);
-};
-
 async function dataHandler() {
   const url =
     "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster";
   let dataContent = await axios.get(url);
   let monsterDataBase = dataContent.data.data;
   monsterDataBaseHandler(monsterDataBase);
-  deckHandler(monsterDataBase);
 }
 
 const endGame = () => {
@@ -188,6 +178,8 @@ const label = document.querySelector(".select-avatar-text");
 const username = document.querySelector(".username");
 const avatarChild = document.querySelector(".user-avatar");
 const form = document.querySelector(".user-info-form");
+const userNameInput = document.getElementById("name");
+const userNameBtn = document.querySelector(".fight-btn");
 
 let avatars = [
   {
@@ -244,10 +236,21 @@ const removeImages = () => {
 };
 
 const userNameHandler = () => {
-  let userName = prompt("Please enter your name", "Yugi");
-  if (userName != null) {
-    username.innerText = userName;
-  }
+  userNameBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const userNameText = userNameInput.value;
+    username.innerText = userNameText;
+    if (userNameText == "") {
+      username.innerText = "Yugi";
+    }
+    randomizerBtn.classList.remove("hidden");
+    winsDisplay.classList.remove("hidden");
+    losesDisplay.classList.remove("hidden");
+    scoreKeeper.classList.remove("hidden");
+    levelBar.classList.remove("hidden");
+    userNameInput.classList.add("hidden");
+    userNameBtn.classList.add("hidden");
+  });
 };
 
 avatarSelector.addEventListener("change", (event) => {
@@ -256,11 +259,13 @@ avatarSelector.addEventListener("change", (event) => {
       return singleAvatar;
     }
   });
-  randomizerBtn.classList.remove("hidden");
-  winsDisplay.classList.remove("hidden");
-  losesDisplay.classList.remove("hidden");
-  scoreKeeper.classList.remove("hidden");
-  levelBar.classList.remove("hidden");
+  userNameInput.classList.remove("hidden");
+  userNameBtn.classList.remove("hidden");
+  // randomizerBtn.classList.remove("hidden");
+  // winsDisplay.classList.remove("hidden");
+  // losesDisplay.classList.remove("hidden");
+  // scoreKeeper.classList.remove("hidden");
+  // levelBar.classList.remove("hidden");
   displayAvatarHandler(selected);
   userNameHandler();
 });
@@ -282,3 +287,5 @@ const reachedMaxLevel = () => {
     });
   }
 };
+
+//-----------------------------------------------------------------------------------------------

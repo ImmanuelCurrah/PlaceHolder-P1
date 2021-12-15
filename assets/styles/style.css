@@ -166,6 +166,8 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 30px;
+  margin: 5px;
+  text-align: center;
 }
 
 .score-counter {
@@ -213,30 +215,47 @@ footer {
 }
 
 .start-btn {
-  color: red;
+  color: rgb(68, 176, 184);
   height: 50px;
   width: 300px;
   font-size: 40px;
   font-weight: bold;
+  background-color: salmon;
 }
 
 .home-footer {
+  display: flex;
   background-color: rgb(68, 176, 184);
   margin-bottom: 0;
   height: 40px;
   font-size: 10px;
+  align-items: flex-end;
+}
+
+.my-name {
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 .github {
   height: 50px;
   width: 50px;
-  margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.github:hover {
+  transform: scale(1.1);
 }
 
 .linkin {
-  height: 45px;
-  width: 45px;
-  margin-bottom: 5px;
+  height: 35px;
+  width: 35px;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkin:hover {
+  transform: scale(1.5);
 }
 
 @media only screen and (max-width: 520px) {
