@@ -20,6 +20,7 @@ const scoreKeeper = document.querySelector(".score-keeper");
 const levelBar = document.querySelector(".level-handler");
 const cardContainer = document.querySelector(".card-name-display");
 const winnerName = document.createElement("h2");
+winnerName.classList.add("display-winner");
 
 let score = 0;
 let loses = 0;

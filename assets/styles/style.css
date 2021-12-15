@@ -235,23 +235,23 @@ footer {
 
 .welcome-to-yugioh {
   font-weight: 900;
-  color: red;
+  color: yellow;
 }
 
 .start-here {
   font-size: 15px;
-  color: red;
+  color: yellow;
   font-size: 23px;
   font-weight: 900;
 }
 
 .start-btn {
-  color: rgb(68, 176, 184);
+  color: yellow;
   height: 50px;
   width: 300px;
   font-size: 40px;
   font-weight: bold;
-  background-color: salmon;
+  background-color: rgb(68, 176, 184);
 }
 
 .home-footer {
@@ -386,7 +386,7 @@ footer {
   align-items: center;
 }
 
-@media only screen and (max-width: 3000px) {
+@media only screen and (min-width: 1050px) {
   .first-card {
     width: 200px;
     height: auto;
@@ -394,11 +394,112 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (min-width: 600px) {
+  /* fight page  */
+
+  #avatar-selector {
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  #name {
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .small-pic {
+    height: 80px;
+    width: 80px;
+  }
+
+  .fight-btn {
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .username {
+    font-size: 30px;
+  }
+
+  .xp-counter {
+    font-size: 25px;
+  }
+
+  #progress-bar {
+    height: 10px;
+  }
+
+  .wins,
+  .loses {
+    font-size: 40px;
+  }
+
+  .score-keeper {
+    font-size: 30px;
+  }
+
+  .random-btn,
+  .reset,
+  .end-game-btn {
+    height: 40px;
+    width: 70px;
+    font-size: 20px;
+  }
+
+  .display-winner {
+    font-size: 35px;
+  }
+
   .first-card {
-    width: 100px;
+    width: 300px;
     height: auto;
     transition: transform 0.3s ease;
+  }
+
+  .first-card:hover {
+    transform: scale(1.18);
+  }
+
+  .second-card {
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .second-card:hover {
+    transform: scale(1.18);
+  }
+
+  .card-name-display {
+    font: 50px;
+  }
+
+  /* home page  */
+
+  .welcome-to-yugioh {
+    font-size: 50px;
+  }
+
+  .start-here {
+    font-size: 40px;
+  }
+
+  .start-btn {
+    height: 70px;
+    width: 300px;
+    font-size: 50px;
+  }
+
+  .my-name {
+    font-size: 15px;
+  }
+
+  /* profile page  */
+  .profile-username {
+    font-size: 20px;
   }
 }
 
