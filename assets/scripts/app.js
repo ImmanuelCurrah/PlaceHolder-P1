@@ -42,7 +42,7 @@ const endGame = () => {
   } else if (loses > 9) {
     loserAnnouncement.classList.remove("hidden");
   }
-  if (score > 9 || loses > 9) {
+  if (score > 9) {
     score = 0;
     loses = 0;
     randomizerBtn.classList.add("hidden");
@@ -58,19 +58,26 @@ const endGame = () => {
       progressBar.value = 0;
       progressBar.max += 40;
     }
-
-    resetBtn.addEventListener("click", () => {
-      winsDisplay.innerText = `Wins: 0`;
-      losesDisplay.innerText = `Loses: 0`;
-      randomizerBtn.classList.remove("hidden");
-      resetBtn.classList.add("hidden");
-      winnerAnnouncement.classList.add("hidden");
-      loserAnnouncement.classList.add("hidden");
-      firstCardSpecs.innerHTML = " ";
-      secondCardSpecs.innerHTML = " ";
-      winnerName.innerHTML = "";
-    });
+  } else if (loses > 1) {
+    score = 0;
+    loses = 0;
+    totalScore;
+    progressBar.value;
+    randomizerBtn.classList.add("hidden");
+    resetBtn.classList.remove("hidden");
+    scoreKeeper.innerText = `Score: ${totalScore}`;
   }
+  resetBtn.addEventListener("click", () => {
+    winsDisplay.innerText = `Wins: 0`;
+    losesDisplay.innerText = `Loses: 0`;
+    randomizerBtn.classList.remove("hidden");
+    resetBtn.classList.add("hidden");
+    winnerAnnouncement.classList.add("hidden");
+    loserAnnouncement.classList.add("hidden");
+    firstCardSpecs.innerHTML = " ";
+    secondCardSpecs.innerHTML = " ";
+    winnerName.innerHTML = "";
+  });
 };
 
 const scoreHandler = (
