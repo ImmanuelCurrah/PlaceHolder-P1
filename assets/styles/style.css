@@ -501,6 +501,43 @@ footer {
   .profile-username {
     font-size: 20px;
   }
+
+  .profile-gender {
+    font-size: 20px;
+  }
+
+  .profile-deck {
+    font-size: 20px;
+  }
+
+  .profile-btn {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .profile-footer {
+    font-size: 20px;
+  }
+
+  /* settings page  */
+  .container {
+    font-size: 20px;
+  }
+
+  .brightness-box {
+    width: 500px;
+  }
+
+  .settings-btn {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .settings-footer {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 520px) {
