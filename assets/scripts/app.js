@@ -34,6 +34,7 @@ async function dataHandler() {
     "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster";
   let dataContent = await axios.get(url);
   let monsterDataBase = dataContent.data.data;
+  console.log(monsterDataBase);
   monsterDataBaseHandler(monsterDataBase);
 }
 
@@ -93,7 +94,6 @@ const scoreHandler = (attackOne, defenceTwo, nameOne, nameTwo) => {
     loses++;
     winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
     cardContainer.appendChild(winnerName);
-    console.log("loser!");
   } else if (attackOne == defenceTwo) {
     score;
     loses;

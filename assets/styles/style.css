@@ -254,6 +254,29 @@ footer {
   background-color: rgb(68, 176, 184);
 }
 
+.start-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  border: 2px solid black;
+  box-shadow: 5px 5px 0 yellow, -5px -5px 0 yellow, -5px 5px 0 yellow,
+    5px -5px 0 yellow;
+  transition: 500ms ease-in-out;
+}
+
+.start-btn:hover {
+  box-shadow: 20px 5px 0 red, -20px -5px 0 red;
+}
+
+.start-btn:focus {
+  outline: none;
+}
+
 .home-footer {
   display: flex;
   background-color: rgb(68, 176, 184);
@@ -329,6 +352,28 @@ footer {
   align-items: center;
 }
 
+.profile-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  border: 2px solid black;
+  box-shadow: 5px 5px 0 gold, -5px -5px 0 gold, -5px 5px 0 gold, 5px -5px 0 gold;
+  transition: 500ms ease-in-out;
+}
+
+.profile-btn:hover {
+  box-shadow: 20px 5px 0 rgb(68, 176, 184), -20px -5px 0 rgb(68, 176, 184);
+}
+
+.profile-btn:focus {
+  outline: none;
+}
+
 /* settings body  */
 
 .settings-body {
@@ -385,6 +430,30 @@ footer {
   flex-direction: row;
   align-items: center;
 }
+
+.settings-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  border: 2px solid black;
+  box-shadow: 5px 5px 0 gold, -5px -5px 0 gold, -5px 5px 0 gold, 5px -5px 0 gold;
+  transition: 500ms ease-in-out;
+}
+
+.settings-btn:hover {
+  box-shadow: 20px 5px 0 rgb(68, 176, 184), -20px -5px 0 rgb(68, 176, 184);
+}
+
+.settings-btn:focus {
+  outline: none;
+}
+
+/* https://codepen.io/chancesq/pen/xxVGbrw */
 
 @media only screen and (max-width: 520px) {
   .nav-menu {
@@ -648,6 +717,16 @@ footer {
   }
 
   .random-btn {
+    width: 120px;
+    height: 30px;
+  }
+
+  .reset {
+    width: 120px;
+    height: 30px;
+  }
+
+  .end-game-btn {
     width: 120px;
     height: 30px;
   }
