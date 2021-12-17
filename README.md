@@ -81,32 +81,74 @@ This wireframe is a showcase of what a player would see in the browser. This vie
 | Component                                                                    | Priority | Estimated Time | Time Invested | Actual Time |
 | ---------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
 | INFRASTRUCTURE:                                                              |          |                |               |             |
-| Set up HTML                                                                  |    H     |     0.5hrs     |               |             |
-| Js code to connect API                                                       |    H     |      2hrs      |               |             |
+| Set up HTML                                                                  |    H     |     0.5hrs     |    0.5hrs     |   0.5hrs    |
+| Js code to connect API                                                       |    H     |      2hrs      |     1hrs      |    1hrs     |
 | DATA:                                                                        |
-| Write logic to select random cards and display on screen                     |    H     |      4hrs      |               |             |
-| Connect random card generation to button                                     |    H     |      3hrs      |               |             |
-| Create a score counter and logic to see which card wins                      |    H     |      4hrs      |               |             |
-| End game logic, display winner                                               |    M     |      2hrs      |               |             |
-| Create a restart game button                                                 |    M     |      4hrs      |               |             |
-| User Input like user name and avatar selection and display                   |    M     |      5hrs      |               |             |
+| Write logic to select random cards and display on screen                     |    H     |      4hrs      |     20min     |    20min    |
+| Connect random card generation to button                                     |    H     |      3hrs      |     10min     |    10min    |
+| Create a score counter and logic to see which card wins                      |    H     |      4hrs      |     1hrs      |    1hrs     |
+| End game logic, display winner                                               |    M     |      2hrs      |    2.5hrs     |   2.5hrs    |
+| Create a restart game button                                                 |    M     |      4hrs      |     1hrs      |    1hrs     |
+| User Input like user name and avatar selection and display                   |    M     |      5hrs      |     6hrs      |    6hrs     |
 | STYLING:                                                                     |
-| background-image set, header and links                                       |    H     |      3hrs      |               |             |
-| style buttons to look nice and cool                                          |    M     |      3hrs      |               |             |
-| create dropdown in mobile app with links, just regular links for other sizes |    M     |      2hrs      |               |             |
-| create some animation for cards when randomized                              |    L     |      5hrs      |               |             |
-| Some animation for end game before a restart button                          |    M     |      4hrs      |               |             |
-| Basic styling and making sure everything looks good at each size and works   |    H     |      6hrs      |               |             |
-| Total                                                                        |          |    47.5hrs     |               |             |
+| background-image set, header and links                                       |    H     |      3hrs      |     4hrs      |    4hrs     |
+| style buttons to look nice and cool                                          |    M     |      3hrs      |     1hrs      |    1hrs     |
+| create dropdown in mobile app with links, just regular links for other sizes |    M     |      2hrs      |     2hrs      |    2hrs     |
+| create some animation for cards when randomized                              |    L     |      5hrs      |     2hrs      |    2hrs     |
+| Basic styling and making sure everything looks good at each size and works   |    H     |      6hrs      |     8hrs      |    8hrs     |
+| Post MVPS                                                                    |          |                |     3hrs      |    3hrs     |
+| Total                                                                        |          |    43.5hrs     |    32.5hrs    |   32.5hrs   |
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+I am most proud of this snippet because it's probably the piece of code I had the most fun writing. Basically making it so at the end of a round, meaning the player has so many wins or loses it shows a message that is dynamic to the cards present in the last draw. As well as rewarding xp points or not. It also has the functionality to change the screen from playing to allowing the player to reset the match as well as seeing if the value of xp the player has gained warrants the leveling up logic to be initiated.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+const endGame = (nameOne) => {
+  if (score > 9) {
+    winnerAnnouncement.classList.remove("hidden");
+    winnerName.innerText = `You drew ${nameOne} and won!`;
+  } else if (loses > 9) {
+    loserAnnouncement.classList.remove("hidden");
+    winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
+  }
+  if (score > 9) {
+    score = 0;
+    loses = 0;
+    randomizerBtn.classList.add("hidden");
+    resetBtn.classList.remove("hidden");
+    totalScore += 500;
+    scoreKeeper.innerText = `Score: ${totalScore}`;
+    progressBar.value += 20;
+    reachedMaxLevel();
+
+    if (progressBar.value == 100) {
+      level++;
+      xpCounter.innerText = `Level: ${level}`;
+      progressBar.value = 0;
+      progressBar.max += 40;
+    }
+  } else if (loses > 9) {
+    score = 0;
+    loses = 0;
+    totalScore;
+    progressBar.value;
+    randomizerBtn.classList.add("hidden");
+    resetBtn.classList.remove("hidden");
+    scoreKeeper.innerText = `Score: ${totalScore}`;
+  }
+  resetBtn.addEventListener("click", () => {
+    winsDisplay.innerText = `Wins: 0`;
+    losesDisplay.innerText = `Loses: 0`;
+    randomizerBtn.classList.remove("hidden");
+    resetBtn.classList.add("hidden");
+    winnerAnnouncement.classList.add("hidden");
+    loserAnnouncement.classList.add("hidden");
+    firstCardSpecs.innerHTML = " ";
+    secondCardSpecs.innerHTML = " ";
+    winnerName.innerHTML = "";
+  });
+};
 ```
 
 ## Change Log
