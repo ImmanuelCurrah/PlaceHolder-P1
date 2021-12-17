@@ -4,6 +4,8 @@
 
 Yug.io
 
+https://immanuelcurrah.github.io/Yug.io/
+
 ## Project Description
 
 My project is going to be a simple game using a Yu-gi-oh Card database. The player will also be able to choose an avatar from another api. Two cards will be drawn at random. The card that's attack points are greater then the other's defensive will win. After a certain amount of wins or loses the game will be over and restart.
