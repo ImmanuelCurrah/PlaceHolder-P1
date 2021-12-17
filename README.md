@@ -98,8 +98,8 @@ This wireframe is a showcase of what a player would see in the browser. This vie
 | create dropdown in mobile app with links, just regular links for other sizes |    M     |      2hrs      |     2hrs      |    2hrs     |
 | create some animation for cards when randomized                              |    L     |      5hrs      |     2hrs      |    2hrs     |
 | Basic styling and making sure everything looks good at each size and works   |    H     |      6hrs      |     8hrs      |    8hrs     |
-| Post MVPS                                                                    |          |                |     3hrs      |    3hrs     |
-| Total                                                                        |          |    43.5hrs     |    32.5hrs    |   32.5hrs   |
+| Post MVPS                                                                    |          |                |     3hrs      |    5hrs     |
+| Total                                                                        |          |    43.5hrs     |    32.5hrs    |   34.5hrs   |
 
 ## Code Snippet
 
