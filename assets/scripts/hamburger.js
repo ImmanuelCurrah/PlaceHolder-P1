@@ -1,8 +1,4 @@
-export { hamburgerHandler, hello };
-
-function hello() {
-  console.log("hi");
-}
+export { hamburgerHandler };
 
 function hamburgerHandler() {
   const hamburger = document.querySelector(".hamburger");

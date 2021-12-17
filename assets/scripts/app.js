@@ -21,7 +21,6 @@ const levelBar = document.querySelector(".level-handler");
 const cardContainer = document.querySelector(".card-name-display");
 const winnerName = document.createElement("h2");
 winnerName.classList.add("display-winner");
-let deckCollection = [];
 
 let score = 0;
 let loses = 0;
@@ -35,10 +34,7 @@ async function dataHandler() {
     "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster";
   let dataContent = await axios.get(url);
   let monsterDataBase = dataContent.data.data;
-  const deckUrl =
-    "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster&race=Dragon";
-  let deckContent = await axios.get(deckUrl);
-  const deck = deckContent.data.data;
+  console.log(monsterDataBase);
 
   monsterDataBaseHandler(monsterDataBase);
 }
