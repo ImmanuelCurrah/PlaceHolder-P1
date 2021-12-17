@@ -26,6 +26,7 @@ let score = 0;
 let loses = 0;
 let level = 1;
 let totalScore = 0;
+let randomizerNumber = 30;
 
 xpCounter.innerText = `Level: ${level}`;
 
@@ -34,14 +35,22 @@ async function dataHandler() {
     "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster";
   let dataContent = await axios.get(url);
   let monsterDataBase = dataContent.data.data;
-  console.log(monsterDataBase);
-  monsterDataBaseHandler(monsterDataBase);
+  const deckUrl =
+    "https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster&race=Dragon";
+  let deckContent = await axios.get(deckUrl);
+  const deck = deckContent.data.data;
+
+  // console.log(deckCards);
+  monsterDataBaseHandler(monsterDataBase, deck);
 }
 
-const endGame = (nameOne) => {
+const endGame = (nameOne, deck, secondRandomMonster) => {
   if (score > 9) {
     winnerAnnouncement.classList.remove("hidden");
     winnerName.innerText = `You drew ${nameOne} and won!`;
+    deck.push(secondRandomMonster);
+    console.log(deck);
+    // console.log(deck);
   } else if (loses > 9) {
     loserAnnouncement.classList.remove("hidden");
     winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
@@ -84,7 +93,14 @@ const endGame = (nameOne) => {
   });
 };
 
-const scoreHandler = (attackOne, defenceTwo, nameOne, nameTwo) => {
+const scoreHandler = (
+  attackOne,
+  defenceTwo,
+  nameOne,
+  nameTwo,
+  deck,
+  secondRandomMonster
+) => {
   winnerName.innerHTML = "";
   if (attackOne > defenceTwo) {
     score++;
@@ -102,7 +118,7 @@ const scoreHandler = (attackOne, defenceTwo, nameOne, nameTwo) => {
 
   winsDisplay.innerText = `Wins: ${score}`;
   losesDisplay.innerText = `Loses: ${loses}`;
-  endGame(nameOne);
+  endGame(nameOne, deck, secondRandomMonster);
 };
 
 const firstMonsterSpecs = (name, attack, defence, image) => {
@@ -147,8 +163,9 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
   secondCardSpecs.appendChild(secondImage);
 };
 
-const monsterDataBaseHandler = (dataBase) => {
-  const firstRandomMonster = dataBase[Math.floor(Math.random() * 200)];
+const monsterDataBaseHandler = (dataBase, deckBase) => {
+  const firstRandomMonster =
+    deckBase[Math.floor(Math.random() * randomizerNumber)];
   // console.log(randomMonster);
   let name = firstRandomMonster.name;
   let attack = firstRandomMonster.atk;
@@ -163,11 +180,18 @@ const monsterDataBaseHandler = (dataBase) => {
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
-  scoreHandler(attack, defenceTwo, name, nameTwo);
+  scoreHandler(
+    attack,
+    defenceTwo,
+    name,
+    nameTwo,
+    deckBase,
+    secondRandomMonster
+  );
 };
 
-const app = (dataBase) => {
-  dataHandler(dataBase);
+const app = () => {
+  dataHandler();
 };
 
 randomizerBtn.addEventListener("click", app);
@@ -230,6 +254,9 @@ const displayAvatarHandler = (avatarsImage) => {
 
   let img = document.createElement("img");
   img.classList.add("small-pic");
+  //idk playing around with the local storage thingy
+  // localStorage.setItem("imgSrc", avatarsImage[0].url);
+  // img.src = localStorage.getItem("imgSrc");
   img.src = avatarsImage[0].url;
   img.alt = `This is an image of a Shmoe, this one is ${avatarsImage[0].name}`;
   imageSpot.appendChild(img);
