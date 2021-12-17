@@ -47,7 +47,6 @@ const endGame = (nameOne) => {
   if (score > 9) {
     winnerAnnouncement.classList.remove("hidden");
     winnerName.innerText = `You drew ${nameOne} and won!`;
-    // console.log(deck);
   } else if (loses > 9) {
     loserAnnouncement.classList.remove("hidden");
     winnerName.innerText = `You drew ${nameOne} and lost! Better luck next time.`;
