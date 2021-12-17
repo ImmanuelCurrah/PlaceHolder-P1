@@ -21,12 +21,12 @@ const levelBar = document.querySelector(".level-handler");
 const cardContainer = document.querySelector(".card-name-display");
 const winnerName = document.createElement("h2");
 winnerName.classList.add("display-winner");
+let deckCollection = [];
 
 let score = 0;
 let loses = 0;
 let level = 1;
 let totalScore = 0;
-let randomizerNumber = 30;
 
 xpCounter.innerText = `Level: ${level}`;
 
@@ -40,16 +40,13 @@ async function dataHandler() {
   let deckContent = await axios.get(deckUrl);
   const deck = deckContent.data.data;
 
-  // console.log(deckCards);
-  monsterDataBaseHandler(monsterDataBase, deck);
+  monsterDataBaseHandler(monsterDataBase);
 }
 
-const endGame = (nameOne, deck, secondRandomMonster) => {
+const endGame = (nameOne) => {
   if (score > 9) {
     winnerAnnouncement.classList.remove("hidden");
     winnerName.innerText = `You drew ${nameOne} and won!`;
-    deck.push(secondRandomMonster);
-    console.log(deck);
     // console.log(deck);
   } else if (loses > 9) {
     loserAnnouncement.classList.remove("hidden");
@@ -93,14 +90,7 @@ const endGame = (nameOne, deck, secondRandomMonster) => {
   });
 };
 
-const scoreHandler = (
-  attackOne,
-  defenceTwo,
-  nameOne,
-  nameTwo,
-  deck,
-  secondRandomMonster
-) => {
+const scoreHandler = (attackOne, defenceTwo, nameOne, nameTwo) => {
   winnerName.innerHTML = "";
   if (attackOne > defenceTwo) {
     score++;
@@ -118,7 +108,7 @@ const scoreHandler = (
 
   winsDisplay.innerText = `Wins: ${score}`;
   losesDisplay.innerText = `Loses: ${loses}`;
-  endGame(nameOne, deck, secondRandomMonster);
+  endGame(nameOne);
 };
 
 const firstMonsterSpecs = (name, attack, defence, image) => {
@@ -163,9 +153,8 @@ const secondMonsterSpecs = (name, attack, defence, image) => {
   secondCardSpecs.appendChild(secondImage);
 };
 
-const monsterDataBaseHandler = (dataBase, deckBase) => {
-  const firstRandomMonster =
-    deckBase[Math.floor(Math.random() * randomizerNumber)];
+const monsterDataBaseHandler = (dataBase) => {
+  const firstRandomMonster = dataBase[Math.floor(Math.random() * 200)];
   // console.log(randomMonster);
   let name = firstRandomMonster.name;
   let attack = firstRandomMonster.atk;
@@ -180,14 +169,7 @@ const monsterDataBaseHandler = (dataBase, deckBase) => {
 
   secondMonsterSpecs(nameTwo, attackTwo, defenceTwo, imageTwo);
   firstMonsterSpecs(name, attack, defence, image);
-  scoreHandler(
-    attack,
-    defenceTwo,
-    name,
-    nameTwo,
-    deckBase,
-    secondRandomMonster
-  );
+  scoreHandler(attack, defenceTwo, name, nameTwo);
 };
 
 const app = () => {

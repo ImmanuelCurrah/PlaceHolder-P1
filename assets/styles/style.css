@@ -345,6 +345,12 @@ footer {
   align-items: center;
 }
 
+.profile-deck-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .profile-footer {
   height: 100%;
   display: flex;
@@ -634,6 +640,10 @@ footer {
   }
 
   .profile-deck {
+    font-size: 20px;
+  }
+
+  .profile-deck-cards {
     font-size: 20px;
   }
 
